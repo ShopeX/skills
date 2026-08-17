@@ -1,0 +1,9 @@
+# Replace @shopex/agent-skills-maintainers with the real GitHub team before publishing.
+* @shopex/agent-skills-maintainers
+
+/skills/ecx-* @shopex/ecx-owners @shopex/agent-skills-maintainers
+/skills/oms-* @shopex/oms-owners @shopex/agent-skills-maintainers
+/skills/digios-* @shopex/digios-owners @shopex/agent-skills-maintainers
+/skills/common-* @shopex/agent-skills-maintainers
+/skills/suite-* @shopex/agent-skills-maintainers
+/skills/router-* @shopex/agent-skills-maintainers
