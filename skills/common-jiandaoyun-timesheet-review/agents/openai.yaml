@@ -1,0 +1,4 @@
+interface:
+  display_name: "简道云工时确认助手"
+  short_description: "启发式配置简道云工时巡检、待确认分类、项目经理催办与安全确认"
+  default_prompt: "使用 $common-jiandaoyun-timesheet-review 配置或检查我的简道云工时待确认事项。"

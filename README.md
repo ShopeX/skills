@@ -47,6 +47,7 @@ npx skills add https://github.com/ShopeX/skills --skill ecx-shopping-assistant
 | Skill | 分类 | 用途 |
 |---|---|---|
 | [`ecx-shopping-assistant`](skills/ecx-shopping-assistant/SKILL.md) | ECX 产品 Skill | ECX/ECShopX 自然语言购物、下单与支付二维码闭环 |
+| [`common-jiandaoyun-timesheet-review`](skills/common-jiandaoyun-timesheet-review/SKILL.md) | 共享办公效率 Skill | 简道云进行中工时巡检、本人待确认分类与项目经理催办 |
 
 新增 Skill 后必须同步此表。
 

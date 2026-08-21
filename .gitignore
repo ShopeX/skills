@@ -5,3 +5,13 @@ __pycache__/
 .env.*
 !.env.example
 dist/
+
+# Local credentials and runtime state must never enter the public Skill repository.
+skills/**/profiles/
+skills/**/auth/
+skills/**/browser-profile/
+skills/**/runtime/
+skills/**/.auth/
+skills/**/*.state.json
+skills/**/storage-state*.json
+*.local.json
