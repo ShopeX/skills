@@ -23,12 +23,13 @@ Shopex 公共仓进一步要求名称以已注册 scope 开头。
 
 ## 2. 分类与名称语法
 
+正式前缀：`ecx-*` / `oms-*` / `digios-*` / `b2b-*` / `pos-*` / `suite-*`。既有跨产品 Skill 可继续使用 `common-*`。不再使用 `router-*`。
+
 | 类别 | 语法 | 用途 | 示例 |
 |---|---|---|---|
 | 产品专属 | `<product>-<capability>[-<object>]` | 单产品内的专业任务 | `ecx-order-diagnosis` |
 | 跨产品共享 | `common-<capability>[-<object>]` | 至少两个产品共同使用 | `common-api-contract-review` |
 | 组合流程 | `suite-<workflow>` | 编排多个能力完成完整流程 | `suite-release-readiness` |
-| 路由选择 | `router-<domain>` | 请求不明确时选择产品或 Skill | `router-shopex-product` |
 
 能力名优先使用明确的动作/结果词：`diagnosis`、`migration`、`review`、`reconcile`、`analysis`、`export`。禁止使用意义空泛的 `helper`、`tool`、`utils`、`manager`、`assistant`、`super-skill`；若能力本身是面向终端用户的完整助手（如购物助手），可经评审使用 `assistant`。
 
@@ -39,11 +40,12 @@ Shopex 公共仓进一步要求名称以已注册 scope 开头。
 | ECX / ECShopX | `ecx-` | ECX、ECShopX、ecshopx | active |
 | OMS | `oms-` | OMS、订单管理、库存履约 | active |
 | DigiOS | `digios-` | DigiOS、digios | active |
+| B2B | `b2b-` | B2B、批发、经销 | active |
+| POS | `pos-` | POS、门店收银、线下零售 | active |
 | 跨产品共享 | `common-` | Shopex shared/common | active |
 | 组合流程 | `suite-` | end-to-end、完整流程 | active |
-| 路由 | `router-` | ambiguous Shopex request | active |
 
-新增产品线时，先通过 PR 修改此注册表并指定 CODEOWNER，再提交产品 Skill。禁止未经注册创造同义前缀，如 `digi-os-`、`dos-`、`digital-os-`。
+新增产品线时，先通过 PR 修改此注册表并指定 CODEOWNER，再提交产品 Skill。禁止未经注册创造同义前缀，如 `digi-os-`、`dos-`、`digital-os-`、`wholesale-`、`cashier-`。
 
 ## 4. 推荐与反例
 
@@ -56,10 +58,11 @@ Shopex 公共仓进一步要求名称以已注册 scope 开头。
 | `oms-fulfillment-troubleshooting` | `fulfillment` | 缺产品与动作 |
 | `digios-report-analysis` | `digios-ai` | `ai` 是技术标签，不是能力 |
 | `digios-data-export` | `DigiOS/export` | 大写和斜杠不合法 |
+| `b2b-quote-review` | `b2b-tool` | `tool` 不表达结果 |
+| `pos-checkout-recovery` | `POS_Cashier_v2` | 大写、下划线、含版本 |
 | `common-api-contract-review` | `shared-common-api-utils` | scope 重复且 `utils` 含糊 |
 | `common-incident-triage` | `global-fix-all` | 夸大且触发范围失控 |
 | `suite-release-readiness` | `ecx-oms-release-super-skill` | 枚举产品、营销化、难扩展 |
-| `router-shopex-product` | `auto-router-manager-v3` | 空泛且含版本号 |
 
 ## 5. Description 规范
 
@@ -112,7 +115,7 @@ skills/ecx-order-diagnosis/../common-x/references/a.md
 
 不同安装器的扫描深度和依赖复制行为不同；单个 Skill 被复制或安装后仍必须完整工作。
 
-## 7. Common、Suite 与 Router 的边界
+## 7. Common 与 Suite 的边界
 
 ### `common-*`
 
@@ -122,17 +125,13 @@ skills/ecx-order-diagnosis/../common-x/references/a.md
 
 完成用户可感知的端到端流程，可编排产品 Skill 和 Common Skill。它不等于包管理器，不能假设安装器会自动安装依赖；应检查能力是否可用并明确降级方式。
 
-### `router-*`
-
-只回答“应该使用哪个产品/Skill”，不复制下游专业规则。明确产品或专业 Skill 已匹配时，不应触发 Router。
-
 依赖方向保持：
 
 ```text
-router → suite → product/common specialist
+suite → product/common specialist
 ```
 
-禁止环状依赖。
+禁止环状依赖。不新增 `router-*` Skill；产品不明确时，应在对应产品 Skill 的 description 中写清边界，而不是单独做路由 Skill。
 
 ## 8. 触发测试最低要求
 

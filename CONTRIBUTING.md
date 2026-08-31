@@ -1,6 +1,6 @@
 # 贡献 Shopex Agent Skills
 
-感谢为 ECX、OMS、DigiOS 或 Shopex 共享能力贡献 Skill。
+感谢为 ECX、OMS、DigiOS、B2B、POS 或 Shopex 共享能力贡献 Skill。
 
 ## 提交前
 
@@ -62,9 +62,9 @@ skills-ref validate skills/<skill-name>
 
 ## Review
 
-- 产品 Skill：对应产品 Owner + Maintainer；
+- 产品 Skill（`ecx-*` / `oms-*` / `digios-*` / `b2b-*` / `pos-*`）：对应产品 Owner + Maintainer；
 - `common-*`：至少两个产品 Owner + Maintainer；
-- `suite-*` / `router-*`：Maintainer，必要时所有受影响产品 Owner；
+- `suite-*`：Maintainer，必要时所有受影响产品 Owner；
 - 含脚本、联网、生产系统或高风险写操作：增加 Security Reviewer。
 
 合并即表示该 Skill 可从 `main` 安装。维护规则见 [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md)。

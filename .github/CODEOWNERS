@@ -4,6 +4,7 @@
 /skills/ecx-* @shopex/ecx-owners @shopex/agent-skills-maintainers
 /skills/oms-* @shopex/oms-owners @shopex/agent-skills-maintainers
 /skills/digios-* @shopex/digios-owners @shopex/agent-skills-maintainers
+/skills/b2b-* @shopex/b2b-owners @shopex/agent-skills-maintainers
+/skills/pos-* @shopex/pos-owners @shopex/agent-skills-maintainers
 /skills/common-* @shopex/agent-skills-maintainers
 /skills/suite-* @shopex/agent-skills-maintainers
-/skills/router-* @shopex/agent-skills-maintainers

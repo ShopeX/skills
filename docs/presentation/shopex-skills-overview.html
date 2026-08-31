@@ -250,9 +250,10 @@
     .tag-ecx { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
     .tag-oms { background: rgba(52, 211, 153, 0.18); color: #6ee7b7; }
     .tag-digios { background: rgba(251, 191, 36, 0.18); color: #fcd34d; }
+    .tag-b2b { background: rgba(244, 114, 182, 0.18); color: #f9a8d4; }
+    .tag-pos { background: rgba(251, 146, 60, 0.18); color: #fdba74; }
     .tag-common { background: rgba(168, 85, 247, 0.18); color: #d8b4fe; }
     .tag-suite { background: rgba(248, 113, 113, 0.18); color: #fca5a5; }
-    .tag-router { background: rgba(34, 211, 238, 0.18); color: #67e8f9; }
 
     .flow {
       display: flex;
@@ -381,7 +382,7 @@
       <div class="badge">商派 · Agent Skills 治理汇报</div>
       <h1>统一 Skill 主仓<br><span>ShopeX/skills</span></h1>
       <p class="subtitle">
-        将本仓库作为商派全产品线的公共 Agent Skills 单仓库，统一承载 ECX、OMS、DigiOS 及后续产品线的专业能力、跨产品共享能力与端到端组合流程。
+        将本仓库作为商派全产品线的公共 Agent Skills 单仓库，统一承载 ECX、OMS、DigiOS、B2B、POS 及后续产品线的专业能力、跨产品共享能力与端到端组合流程。
       </p>
       <div class="meta-row">
         <div class="meta-chip"><strong>仓库</strong> github.com/ShopeX/skills</div>
@@ -424,7 +425,7 @@
             <div class="icon">🧩</div>
             <h3>小而专，不造万能 Skill</h3>
           </div>
-          <p>产品 Skill 承载专业知识；<code>suite-*</code> 做端到端流程；<code>router-*</code> 处理入口歧义。拒绝一个巨型 Skill 包打天下。</p>
+          <p>产品 Skill 承载专业知识；<code>suite-*</code> 做端到端流程。拒绝一个巨型 Skill 包打天下。</p>
         </div>
       </div>
     </div>
@@ -453,7 +454,7 @@
         <ol>
           <li>目录名、<code>SKILL.md</code> 的 <code>name</code>、安装时的 <code>--skill &lt;name&gt;</code> <strong>必须完全一致</strong></li>
           <li>每个 Skill <strong>必须自包含</strong>，禁止引用仓库根目录或兄弟 Skill 的文件</li>
-          <li>产品归属写入全局唯一名称：<code>ecx-*</code>、<code>oms-*</code>、<code>digios-*</code>；跨产品用 <code>common-*</code>，组合流程用 <code>suite-*</code>，路由用 <code>router-*</code></li>
+          <li>产品归属写入全局唯一名称：<code>ecx-*</code>、<code>oms-*</code>、<code>digios-*</code>、<code>b2b-*</code>、<code>pos-*</code>；跨产品用 <code>common-*</code>，组合流程用 <code>suite-*</code></li>
         </ol>
       </div>
     </div>
@@ -463,7 +464,7 @@
   <section class="slide" id="s4">
     <div class="container">
       <h2>命名与分类规范</h2>
-      <p class="subtitle">名称即契约：Agent 靠 description 决定是否加载，团队靠前缀识别归属。</p>
+      <p class="subtitle"><code>ecx-*</code> / <code>oms-*</code> / <code>digios-*</code> / <code>b2b-*</code> / <code>pos-*</code> / <code>suite-*</code>。名称即契约：Agent 靠 description 决定是否加载，团队靠前缀识别归属。</p>
       <table>
         <thead>
           <tr>
@@ -492,16 +493,10 @@
             <td>编排多能力完成完整流程</td>
             <td><code>suite-release-readiness</code></td>
           </tr>
-          <tr>
-            <td><span class="tag tag-router">路由</span></td>
-            <td><code>router-&lt;domain&gt;</code></td>
-            <td>请求不明确时选择产品或 Skill</td>
-            <td><code>router-shopex-product</code></td>
-          </tr>
         </tbody>
       </table>
       <div class="grid-3" style="margin-top: 24px;">
-        <div class="card"><h3>产品前缀</h3><p><span class="tag tag-ecx">ecx-</span><span class="tag tag-oms">oms-</span><span class="tag tag-digios">digios-</span></p></div>
+        <div class="card"><h3>产品前缀</h3><p><span class="tag tag-ecx">ecx-</span><span class="tag tag-oms">oms-</span><span class="tag tag-digios">digios-</span><span class="tag tag-b2b">b2b-</span><span class="tag tag-pos">pos-</span></p></div>
         <div class="card"><h3>字符约束</h3><p>小写字母、数字、单连字符；1–64 字符；正则 <code>^[a-z0-9]+(?:-[a-z0-9]+)*$</code></p></div>
         <div class="card"><h3>禁止</h3><p><code>helper</code>、<code>utils</code>、<code>manager</code>、版本号、大写、下划线、多层目录</p></div>
       </div>
@@ -512,6 +507,8 @@
             <li><code>ecx-shopping-assistant</code></li>
             <li><code>oms-inventory-reconcile</code></li>
             <li><code>digios-report-analysis</code></li>
+            <li><code>b2b-quote-review</code></li>
+            <li><code>pos-checkout-recovery</code></li>
           </ul>
         </div>
         <div class="card bad">
@@ -597,9 +594,9 @@ description: Diagnose ECX order lifecycle failures. Use when an ECX order fails 
         <div class="card">
           <h3>评审分工</h3>
           <table style="margin-top: 0;">
-            <tr><td><code>ecx-*</code> / <code>oms-*</code></td><td>对应产品 Owner + Maintainer</td></tr>
+            <tr><td><code>ecx-*</code> / <code>oms-*</code> / <code>digios-*</code> / <code>b2b-*</code> / <code>pos-*</code></td><td>对应产品 Owner + Maintainer</td></tr>
             <tr><td><code>common-*</code></td><td>至少 2 个产品 Owner + Maintainer</td></tr>
-            <tr><td><code>suite-*</code> / <code>router-*</code></td><td>Maintainer + 受影响产品 Owner</td></tr>
+            <tr><td><code>suite-*</code></td><td>Maintainer + 受影响产品 Owner</td></tr>
             <tr><td>含脚本 / 生产写操作</td><td>额外 Security Reviewer</td></tr>
           </table>
         </div>
@@ -668,8 +665,8 @@ description: Diagnose ECX order lifecycle failures. Use when an ECX order fails 
         <div class="card highlight">
           <h3>商派差异化</h3>
           <ul>
-            <li>产品前缀注册表（ecx / oms / digios）</li>
-            <li><code>common-*</code> / <code>suite-*</code> / <code>router-*</code> 分层</li>
+            <li>产品前缀注册表（ecx / oms / digios / b2b / pos）</li>
+            <li><code>common-*</code> / <code>suite-*</code> 分层</li>
             <li>触发正反例作为 PR 硬性要求</li>
             <li>季度质量审查 + 安全基线</li>
           </ul>

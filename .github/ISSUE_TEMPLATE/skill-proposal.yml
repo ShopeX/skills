@@ -18,9 +18,10 @@ body:
         - ecx
         - oms
         - digios
+        - b2b
+        - pos
         - common
         - suite
-        - router
         - new-product-prefix
     validations:
       required: true

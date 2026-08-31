@@ -2,7 +2,7 @@
 
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-111827)](https://agentskills.io)
 
-Shopex（商派）的公共 Agent Skills 单仓库，统一承载 ECX、OMS、DigiOS 及后续产品线的专业 Skill、跨产品共享能力和端到端组合流程。
+Shopex（商派）的公共 Agent Skills 单仓库，统一承载 ECX、OMS、DigiOS、B2B、POS 及后续产品线的专业 Skill、跨产品共享能力和端到端组合流程。
 
 > 官方 GitHub 仓库：[`ShopeX/skills`](https://github.com/ShopeX/skills)，Clone 地址：`https://github.com/ShopeX/skills.git`。
 
@@ -76,7 +76,7 @@ agent-skills/
 
 1. 目录名、`SKILL.md` 的 `name`、安装时的 `--skill <name>` 必须完全一致。
 2. 每个 Skill 必须自包含，禁止引用仓库根目录或兄弟 Skill 的文件。
-3. 产品归属写入全局唯一名称：`ecx-*`、`oms-*`、`digios-*`；跨产品使用 `common-*`，完整组合流程使用 `suite-*`，仅做选择的路由使用 `router-*`。
+3. 产品归属写入全局唯一名称：`ecx-*`、`oms-*`、`digios-*`、`b2b-*`、`pos-*`；跨产品使用 `common-*`，完整组合流程使用 `suite-*`。不新增 `router-*`。
 
 完整规则见 [`docs/NAMING.md`](docs/NAMING.md)，投稿流程见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
 

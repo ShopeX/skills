@@ -51,13 +51,13 @@ CLI 支持 GitHub shorthand、URL 和本地路径。skills.sh 使用匿名聚合
 
 1. 官方仓库确定为 [`ShopeX/skills`](https://github.com/ShopeX/skills)，Git Clone 地址为 `https://github.com/ShopeX/skills.git`；安装命令统一使用 `ShopeX/skills`。
 2. 采用扁平 `skills/<globally-unique-name>/`，产品写入名称而不是多层目录。
-3. scope 固定为产品前缀、`common-`、`suite-`、`router-`。
+3. scope 固定为产品前缀（`ecx-` / `oms-` / `digios-` / `b2b-` / `pos-`）、既有 `common-`、以及 `suite-`。不使用 `router-`。
 4. 每个 Skill 自包含；组合 Skill 只在 Agent 层编排，不假设安装器处理依赖。
 5. 仓库用 SemVer tag 发布，生产安装锁定 tag/SHA，Skill 名不带版本。
 6. 通过 CODEOWNERS、PR 模板、自动校验、触发正反例和季度审查运营。
 
 ## 6. 为什么不做一个巨大的 `shopex` 万能 Skill
 
-超大组合 Skill 容易误触发；会把 ECX、OMS、DigiOS 规则同时装入上下文；Owner 和版本边界不清；任一产品变化都要求整体调整；用户也无法按需安装。
+超大组合 Skill 容易误触发；会把 ECX、OMS、DigiOS、B2B、POS 规则同时装入上下文；Owner 和版本边界不清；任一产品变化都要求整体调整；用户也无法按需安装。
 
-推荐用小而专的产品 Skill 承载知识，`suite-*` 只做明确端到端流程，`router-*` 只处理真正含糊的入口。这仍是统一的 Shopex Skill 租户/组合仓，但不是不可维护的巨型 Skill。
+推荐用小而专的产品 Skill 承载知识，`suite-*` 只做明确端到端流程。产品不明确时，在各产品 Skill 的 description 中写清边界，而不是单独做路由 Skill。这仍是统一的 Shopex Skill 租户/组合仓，但不是不可维护的巨型 Skill。

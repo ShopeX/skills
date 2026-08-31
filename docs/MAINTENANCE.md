@@ -3,11 +3,11 @@
 ## 1. 角色与责任
 
 - **Maintainers**：维护结构、规范、CI、发布和安全响应。
-- **产品 Owner**：对 ECX、OMS、DigiOS 等产品规则负责。
+- **产品 Owner**：对 ECX、OMS、DigiOS、B2B、POS 等产品规则负责。
 - **Skill Owner**：维护具体 Skill，处理 Issue、触发边界和依赖变化。
 - **Security Reviewer**：审查脚本、网络访问、凭据处理和第三方依赖。
 
-每个 Skill 至少有一名领域 Owner；高风险 Skill 建议有备份 Owner。`common-*` 至少由两个产品 Owner 评审，`suite-*` 和 `router-*` 必须由 Maintainer 评审。
+每个 Skill 至少有一名领域 Owner；高风险 Skill 建议有备份 Owner。`common-*` 至少由两个产品 Owner 评审，`suite-*` 必须由 Maintainer 评审。
 
 ## 2. 分支与评审
 
