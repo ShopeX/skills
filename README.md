@@ -46,7 +46,6 @@ npx skills add https://github.com/ShopeX/skills --skill ecx-shopping-assistant
 
 | Skill | 分类 | 用途 |
 |---|---|---|
-| [`common-jiandaoyun-timesheet-review`](skills/common-jiandaoyun-timesheet-review/SKILL.md) | 共享办公效率 Skill | 通过简道云浏览器登录态和同源接口巡检进行中的工时确认记录，区分本人可确认与需要催项目经理或当前负责人的记录，并在用户明确选择后批量确认。Use when the user says “工时确认” or requests 简道云工时巡检、待确认分类或项目经理催办。适用于首次启发式配置、扫码或 auth_token 登录、切换人员或表单、自定义字段和输出列、只读定时巡检、批量确认。配置与凭据必须保存在 Skill 目录外；不得硬编码或发布个人姓名、租户、应用、表单标识或 token；不读取钉钉。 |
 | [`ecx-general-support`](skills/ecx-general-support/SKILL.md) | ECX 产品 Skill | ECX电商场景：通用售后与工单引导；复制后替换联系方式与 SLA。默认「按需」注入，避免每轮占用大量 Token。。用于用户询问相关业务能力时；不用于无关产品或超出正文边界的操作。 |
 | [`ecx-personalized-fallback-recommend`](skills/ecx-personalized-fallback-recommend/SKILL.md) | ECX 产品 Skill | ECX电商场景：泛发现/清单类话术缺少明确检索词时使用：按登录态选择会员/公开召回工具，仅基于工具返回推荐。。用于用户询问相关业务能力时；不用于无关产品或超出正文边界的操作。 |
 | [`ecx-product-consult`](skills/ecx-product-consult/SKILL.md) | ECX 产品 Skill | ECX电商场景：规格解读与选购建议；具体价格库存与链接必须来自工具返回。。用于用户询问相关业务能力时；不用于无关产品或超出正文边界的操作。 |
